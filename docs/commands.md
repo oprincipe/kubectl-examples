@@ -40,6 +40,7 @@ kubectl delete service/httpenv-np
 kubectl delete service/httpenv-lb
 kubectl delete deployment/httpenv
 
+
 --- GENERATORS ---
 Run, Create and Expose Generators
 -> these commands use helpers templates called "generators"
@@ -48,4 +49,12 @@ Run, Create and Expose Generators
 > kubectl create job test --image nginx --dry-run -o yaml (something you want to run once)
 > kubectl expose deployment/test --port 80 --dry-run -o yaml (the deployment should exists)
 
+
+--- APPLY A YAML FILE/DIRECTORY/URL ---
+Avoid, if possible, to use kubectl create, kubectl replace, kubectl edit
+cause they're not that good to create your infrastructure in production
+
+> kubectl apply -f filename.yml
+> kubectl apply -f myfiles/
+> kubectl apply -f https://yourdomain.com/pod.yml -> not recommended
 
