@@ -1,0 +1,3 @@
+--- ON DOCKER DESKTOP ONLY --- (For other options you should install the proper plugin (ex: AWS LB))
+--- LOAD BALANCER ---
+kubectl expose deployment/httpenv --port 8888 --name httpenv-lb --type LoadBalancer

@@ -1,0 +1,2 @@
+--- NodePort SERVICE ---
+kubectl expose deployment/htpenv --port 8888 --name httpenv-np --tpe NodePort

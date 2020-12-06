@@ -1,0 +1,9 @@
+CoreDNS is the default dns service
+
+Default namespace name is: default
+
+kubectl get namespaces
+
+Services have a FQDN (svc = service)
+> curl <hostname>.<namespace>.svc.cluster.local
+

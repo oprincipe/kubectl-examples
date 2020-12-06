@@ -1,0 +1,14 @@
+--- CREATE A ClusterIP service ---
+kubectl create deployment httpenv --image=bretfisher/httpenv
+
+-> Scale to 5 replicas
+kubectl scale deployment/httpenv --replicas 5
+
+-> Create the ClusterIP service to expose the port INTERNALLY  on the ReplicaSet
+kubectl expose deployment/httpenv --port 8888
+
+-> Get the list of services
+kubectl get service
+
+-> On Mac Docker Desktop kube is running on external linux machine and we need an additional pod to access the others
+kubectl run --generator=run-pod/v1 tmp-shell --rm -it --image bretfisher/netshoot -- bash
